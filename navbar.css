@@ -1,0 +1,145 @@
+@import url("./theme.css");
+
+.menu-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Matched the menu page spacing with the simpler reference layout. */
+  padding: 0 0 2.5rem;
+}
+
+.menu-header {
+  /* Changed the mobile menu header from a floating pill to a plain header row. */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.15rem 0;
+  border: 0;
+  border-bottom: 1px solid var(--color-border);
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+.menu-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--color-border);
+  /* Simplified the close button to match the clean bordered buttons. */
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  font-size: 1.1rem;
+  transition:
+    transform 0.35s var(--ease-smooth),
+    background-color 0.35s var(--ease-smooth),
+    box-shadow 0.35s var(--ease-smooth);
+}
+
+.menu-close:hover,
+.menu-close:focus-visible {
+  transform: none;
+  background: var(--color-accent-soft);
+  box-shadow: var(--shadow-card);
+}
+
+.menu-main {
+  display: grid;
+  align-content: center;
+  gap: 1.5rem;
+  flex: 1;
+  padding: clamp(2rem, 4vw, 4rem) 0 0;
+}
+
+.menu-intro {
+  max-width: 38rem;
+}
+
+.menu-intro h1,
+.menu-note h2 {
+  /* Changed large menu headings to simple bold text. */
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.menu-intro h1 {
+  margin-top: 0.7rem;
+  font-size: clamp(2.4rem, 8vw, 4rem);
+}
+
+.menu-intro p:last-child {
+  margin-top: 1rem;
+  font-size: 1.02rem;
+}
+
+.menu-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.menu-link {
+  /* Made menu links look like simple reference-style cards. */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.15rem 1.25rem;
+  border-radius: var(--radius-md);
+}
+
+.menu-link span {
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.menu-link strong {
+  margin-right: auto;
+  font-size: 1.16rem;
+  font-weight: 700;
+}
+
+.menu-link i {
+  color: var(--color-muted);
+  transition: transform 0.35s var(--ease-smooth), color 0.35s var(--ease-smooth);
+}
+
+.menu-link:hover i,
+.menu-link:focus-visible i {
+  color: var(--color-text);
+  transform: translateX(4px);
+}
+
+.menu-note {
+  display: grid;
+  gap: 1rem;
+  padding: 1.4rem;
+  /* Reduced the note card radius for a cleaner box. */
+  border-radius: var(--radius-md);
+}
+
+.menu-note h2 {
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+}
+
+.menu-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media (max-width: 760px) {
+  .menu-links {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-link {
+    padding: 1rem 1.1rem;
+  }
+}
